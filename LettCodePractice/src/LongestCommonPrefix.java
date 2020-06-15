@@ -44,7 +44,7 @@ public class LongestCommonPrefix {
         return prefix;
     }
     public static void main( String[] args ){
-    String[] strs={"flower","flow","flo","fl","fasdaf"};
+    String[] strs={"flo","flow","flower","flo"};
         System.out.println(longestCommonPrefix(strs));
         System.out.println(longestCommonPrefixLeetCodeSoln1(strs));
     }
