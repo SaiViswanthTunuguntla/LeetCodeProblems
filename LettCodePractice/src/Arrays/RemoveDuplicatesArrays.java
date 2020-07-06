@@ -1,4 +1,4 @@
-package easy;
+package Arrays;
 
 public class RemoveDuplicatesArrays {
 
