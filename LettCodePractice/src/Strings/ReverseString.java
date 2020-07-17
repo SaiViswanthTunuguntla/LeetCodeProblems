@@ -1,5 +1,8 @@
 package Strings;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class ReverseString {
     public void reverseString(char[] s) {
         int n= s.length;
@@ -32,6 +35,23 @@ public class ReverseString {
         char[] s={'h','e','l','l','o'};
         reverseStringRecurssion(s);
         System.out.println(s);
+
+
+
+    }
+    public int firstUniqChar(String s) {
+        Map<Character,Integer> map= new HashMap<>();
+        char[] arr= s.toCharArray();
+        for(char c: arr)
+        {
+            int frq= map.getOrDefault(c,0);
+            map.put(c,frq+1);
+        }
+        for(int i=0; i<arr.length;i++)
+        {
+            if(map.get(arr[i])==1) return i;
+        }
+        return -1;
     }
 
 }

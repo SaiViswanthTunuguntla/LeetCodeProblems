@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class LongestCommonPrefix {
 
 //    Runtime: 1 ms, faster than 56.24% of Java online submissions for Longest Common Prefix.
@@ -45,6 +47,10 @@ public class LongestCommonPrefix {
     }
     public static void main( String[] args ){
     String[] strs={"flo","flow","flower","flo"};
+
+        Map<Integer,Integer> map= new HashMap<>();
+        List<Integer> res=new ArrayList<>();
+
         System.out.println(longestCommonPrefix(strs));
         System.out.println(longestCommonPrefixLeetCodeSoln1(strs));
     }

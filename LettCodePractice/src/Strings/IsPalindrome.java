@@ -46,8 +46,37 @@ public class IsPalindrome {
         return true;
     }
 
+    public static int myAtoi(String str) {
+        str= str.trim();
+        char c= str.charAt(0);
+        boolean isNegative=false;
+        int index=0;
+
+        if(c=='+'|| c=='-') index++;
+        if(c=='-') isNegative=true;
+
+        double res=0;
+
+        for(int i=index;i<str.length();i++)
+        {
+            char cur= str.charAt(i);
+            if(Character.isDigit(cur))
+            {
+                int num=(int)(cur-'0');
+                res=res*10+ num;
+            }else break;
+        }
+        if(res>Integer.MAX_VALUE) return Integer.MAX_VALUE;
+        else if (res<Integer.MIN_VALUE) return Integer.MIN_VALUE;
+
+        return isNegative?-1*(int)res:(int)res;
+
+    }
+
     public static void main(String[] args) {
-        System.out.println(isPalindrome("race a car"));
-        System.out.println(isPalindromeApproach2("race a car"));
+        //System.out.println(isPalindrome("race a car"));
+        //System.out.println(isPalindromeApproach2("race a car"));
+
+        System.out.println(myAtoi("-789"));
     }
 }
